@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/cesar/ontologies/2022/0/untitled-ontology-101#"
+     xml:base="http://www.semanticweb.org/cesar/ontologies/2022/0/untitled-ontology-101"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:ejp="http://purl.org/ejp-rd/vocabulary/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dcat="http://www.w3.org/ns/dcat#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:ordo="http://www.orpha.net/ORDO/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:schema="https://schema.org/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/cesar/ontologies/2022/0/untitled-ontology-101"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/publisher -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/publisher">
+        <owl:equivalentProperty rdf:resource="http://schema.org/publisher"/>
+        <rdfs:label xml:lang="en">dc:publisher</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/spatial -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/spatial">
+        <owl:equivalentProperty rdf:resource="http://schema.org/location"/>
+        <rdfs:range rdf:resource="http://purl.org/dc/elements/1.1/Location"/>
+        <rdfs:label xml:lang="en">dc:spatial</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/location -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/location">
+        <rdfs:domain rdf:resource="http://schema.org/Thing"/>
+        <rdfs:range rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">schema:location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://schema.org/publisher -->
+
+    <owl:ObjectProperty rdf:about="http://schema.org/publisher">
+        <rdfs:domain rdf:resource="http://schema.org/Thing"/>
+        <rdfs:range rdf:resource="http://schema.org/Organization"/>
+        <rdfs:range rdf:resource="http://schema.org/Person"/>
+        <rdfs:label xml:lang="en">schema:publisher</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/description">
+        <owl:equivalentProperty rdf:resource="http://schema.org/description"/>
+        <rdfs:label xml:lang="en">dc:description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
+        <owl:equivalentProperty rdf:resource="http://schema.org/name"/>
+        <rdfs:label xml:lang="en">dc:title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/about -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/about">
+        <owl:equivalentProperty rdf:resource="http://www.w3.org/ns/dcat#theme"/>
+        <rdfs:domain rdf:resource="http://schema.org/Thing"/>
+        <rdfs:label xml:lang="en">schema:about</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/description -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/description">
+        <rdfs:domain rdf:resource="http://schema.org/Thing"/>
+        <rdfs:label xml:lang="en">schema:description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/name -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/name">
+        <rdfs:domain rdf:resource="http://schema.org/Thing"/>
+        <rdfs:label xml:lang="en">schema:name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://schema.org/url -->
+
+    <owl:DatatypeProperty rdf:about="http://schema.org/url">
+        <owl:equivalentProperty rdf:resource="http://xmlns.com/foaf/0.1/page"/>
+        <rdfs:domain rdf:resource="http://schema.org/Thing"/>
+        <rdfs:label xml:lang="en">schema:url</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#theme -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dcat#theme">
+        <rdfs:label xml:lang="en">dcat:theme</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/page -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/page">
+        <rdfs:label xml:lang="en">foaf:page</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/Location -->
+
+    <owl:Class rdf:about="http://purl.org/dc/elements/1.1/Location">
+        <owl:equivalentClass rdf:resource="http://schema.org/Place"/>
+        <rdfs:label xml:lang="en">dc:Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ejp-rd/vocabulary/Biobank -->
+
+    <owl:Class rdf:about="http://purl.org/ejp-rd/vocabulary/Biobank">
+        <owl:equivalentClass rdf:resource="http://schema.org/Thing"/>
+        <rdfs:label xml:lang="en">ejprd:Biobank</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ejp-rd/vocabulary/Guideline -->
+
+    <owl:Class rdf:about="http://purl.org/ejp-rd/vocabulary/Guideline">
+        <owl:equivalentClass rdf:resource="http://schema.org/Thing"/>
+        <rdfs:label xml:lang="en">ejprd:Guideline</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ejp-rd/vocabulary/PatientRegistry -->
+
+    <owl:Class rdf:about="http://purl.org/ejp-rd/vocabulary/PatientRegistry">
+        <owl:equivalentClass rdf:resource="http://schema.org/Thing"/>
+        <rdfs:label xml:lang="en">ejprd:PatientRegistry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/DataCatalog -->
+
+    <owl:Class rdf:about="http://schema.org/DataCatalog">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+        <rdfs:label xml:lang="en">schema:DataCatalog</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Organization -->
+
+    <owl:Class rdf:about="http://schema.org/Organization">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Organization"/>
+        <rdfs:label xml:lang="en">schema:Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Person -->
+
+    <owl:Class rdf:about="http://schema.org/Person">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <rdfs:label xml:lang="en">schema:Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Place -->
+
+    <owl:Class rdf:about="http://schema.org/Place">
+        <rdfs:label xml:lang="en">schema:Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Thing -->
+
+    <owl:Class rdf:about="http://schema.org/Thing">
+        <rdfs:label xml:lang="en">schema:Thing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Catalog -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Catalog">
+        <rdfs:label xml:lang="en">dcat:Catalog</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/dcat#Resource -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Resource">
+        <rdfs:label xml:lang="en">dcat:Resource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Organization -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
+        <rdfs:label xml:lang="en">foaf:Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
+        <rdfs:label xml:lang="en">foaf:Person</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
