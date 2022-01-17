@@ -11,6 +11,7 @@
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:ordo="http://www.orpha.net/ORDO/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:schema="https://schema.org/">
     <owl:Ontology rdf:about="http://www.semanticweb.org/cesar/ontologies/2022/0/untitled-ontology-101"/>
     
@@ -173,7 +174,7 @@
     <!-- http://purl.org/ejp-rd/vocabulary/Biobank -->
 
     <owl:Class rdf:about="http://purl.org/ejp-rd/vocabulary/Biobank">
-        <owl:equivalentClass rdf:resource="http://schema.org/Thing"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Resource"/>
         <rdfs:label xml:lang="en">ejprd:Biobank</rdfs:label>
     </owl:Class>
     
@@ -182,7 +183,7 @@
     <!-- http://purl.org/ejp-rd/vocabulary/Guideline -->
 
     <owl:Class rdf:about="http://purl.org/ejp-rd/vocabulary/Guideline">
-        <owl:equivalentClass rdf:resource="http://schema.org/Thing"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Resource"/>
         <rdfs:label xml:lang="en">ejprd:Guideline</rdfs:label>
     </owl:Class>
     
@@ -191,7 +192,7 @@
     <!-- http://purl.org/ejp-rd/vocabulary/PatientRegistry -->
 
     <owl:Class rdf:about="http://purl.org/ejp-rd/vocabulary/PatientRegistry">
-        <owl:equivalentClass rdf:resource="http://schema.org/Thing"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Resource"/>
         <rdfs:label xml:lang="en">ejprd:PatientRegistry</rdfs:label>
     </owl:Class>
     
@@ -235,6 +236,7 @@
     <!-- http://schema.org/Thing -->
 
     <owl:Class rdf:about="http://schema.org/Thing">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/ns/dcat#Resource"/>
         <rdfs:label xml:lang="en">schema:Thing</rdfs:label>
     </owl:Class>
     
