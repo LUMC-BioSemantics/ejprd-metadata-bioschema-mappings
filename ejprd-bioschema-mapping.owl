@@ -207,6 +207,15 @@
     
 
 
+    <!-- http://www.w3.org/ns/dcat#Dataset -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset">
+        <owl:equivalentClass rdf:resource="https://schema.org/Dataset"/>
+        <rdfs:label xml:lang="en">dcat:Dataset</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://www.w3.org/ns/dcat#Resource -->
 
     <owl:Class rdf:about="http://www.w3.org/ns/dcat#Resource">
@@ -238,6 +247,14 @@
 
     <owl:Class rdf:about="https://schema.org/DataCatalog">
         <rdfs:label xml:lang="en">schema:DataCatalog</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://schema.org/Dataset -->
+
+    <owl:Class rdf:about="https://schema.org/Dataset">
+        <rdfs:label xml:lang="en">schema:Dataset</rdfs:label>
     </owl:Class>
     
 
