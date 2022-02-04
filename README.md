@@ -3,7 +3,7 @@ This repository contains mappings of EJPRD metadata model and bioschema
 
 
 ### Demo
-We hosted the mapping files and some of the EJPRD resources metadata in this [triplestore](http://ejprd.fair-dtls.surf-hosted.nl:7200/) under repository `ejprd-metadata-model-mappings`. Below you can find example `SPARQL` queries that will make use of these mappings.
+We hosted the mapping files and some of the EJPRD resources metadata in this [triplestore](http://178.63.49.197:7300/) under repository `ejprd-metadata-model-mappings`. Below you can find example `SPARQL` queries that will make use of these mappings.
 
 **Note:** The SPARQL queries below are written from the `schema.org/bioschema` perspective. So the concepts and properties related to the `schema.org/bioschema`are shown in the queries.
 
