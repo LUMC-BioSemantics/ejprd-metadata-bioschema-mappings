@@ -1,5 +1,5 @@
 # ejprd-metadata-bioschema-mappings
-This repository contains the mappings between EJPRD metadata model and the bioschemas.org concepts.
+This repository contains the mappings between the [EJPRD metadata model](https://github.com/ejp-rd-vp/resource-metadata-schema) and the bioschemas.org model.
 
 ### The mapping
 The mapping file contains both OWL-based mappings and SKOS-based mappings. The latter is used to provide a more accurate semantic to the mappings, as some OWL-based mappings (e.g., owl:sameAs) might be too strict. Still, we maintained the OWL-based mappings to provide an automatic machine-actionable translation of the EJP RD metadata resources to bioschema.org concepts.
