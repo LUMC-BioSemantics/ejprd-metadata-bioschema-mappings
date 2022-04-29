@@ -1,11 +1,14 @@
 # ejprd-metadata-bioschema-mappings
-This repository contains mappings of EJPRD metadata model and bioschema
+This repository contains the mappings between EJPRD metadata model and the bioschemas.org concepts.
+
+### The mapping
+The mapping file contains both OWL-based mappings and SKOS-based mappings. The latter is used to provide a more accurate semantic to the mappings, as some OWL-based mappings (e.g., owl:sameAs) might be too strict. Still, we maintained the OWL-based mappings to provide an automatic machine-actionable translation of the EJP RD metadata resources to bioschema.org concepts.
 
 
 ### Demo
-We hosted the mapping files and some of the EJPRD resources metadata in this [triplestore](http://178.63.49.197:7300/) under repository `ejprd-metadata-model-mappings`. Below you can find example `SPARQL` queries that will make use of these mappings.
+We hosted the mapping files and some of the EJPRD resources metadata in this [triplestore](http://178.63.49.197:7300/) under the repository `ejprd-metadata-model-mappings`. Below you can find examples of `SPARQL` queries that make use of these mappings.
 
-**Note:** The SPARQL queries below are written from the `schema.org/bioschema` perspective. So the concepts and properties related to the `schema.org/bioschema`are shown in the queries.
+**Note:** The SPARQL queries below are written from the `schema.org/bioschema` perspective. So the concepts and properties related to the `schema.org/bioschema` are shown in the queries.
 
 
 ##### Get datasets and its properties

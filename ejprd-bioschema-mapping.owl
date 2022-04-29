@@ -1,296 +1,321 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/cesar/ontologies/2022/0/untitled-ontology-101#"
-     xml:base="http://www.semanticweb.org/cesar/ontologies/2022/0/untitled-ontology-101"
-     xmlns:dct="http://purl.org/dc/terms/"
-     xmlns:ejp="http://purl.org/ejp-rd/vocabulary/"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:dcat="http://www.w3.org/ns/dcat#"
-     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-     xmlns:ordo="http://www.orpha.net/ORDO/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:schema="https://schema.org/">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/cesar/ontologies/2022/0/untitled-ontology-101"/>
-    
+@prefix : <http://www.semanticweb.org/cesar/ontologies/2022/0/untitled-ontology-101#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ejp: <http://purl.org/ejp-rd/vocabulary/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ordo: <http://www.orpha.net/ORDO/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <https://www.w3.org/2009/08/skos-reference/skos.html#> .
+@prefix schema: <https://schema.org/> .
+@base <https://github.com/LUMC-BioSemantics/ejprd-metadata-bioschema-mappings/> .
 
+<https://github.com/LUMC-BioSemantics/ejprd-metadata-bioschema-mappings/> rdf:type owl:Ontology ;
+                                                                           owl:versionIRI <https://github.com/LUMC-BioSemantics/ejprd-metadata-bioschema-mappings/1.1> ;
+                                                                           dct:creator "https://orcid.org/0000-0002-1215-167X" ,
+                                                                                       "https://orcid.org/0000-0003-1795-5930" ;
+                                                                           owl:priorVersion 1.0 ;
+                                                                           dcat:description "This artefact maps the EJP RD metadata model to bioschemas.org concepts." ;
+                                                                           dcat:license "https://creativecommons.org/licenses/by/4.0/" ;
+                                                                           dcat:title "EJP RD mapping to bioschemas.org"@en .
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+#################################################################
+#    Annotation properties
+#################################################################
 
-    
+###  http://purl.org/dc/terms/creator
+dct:creator rdf:type owl:AnnotationProperty ;
+            rdfs:label "creator"@en .
 
 
-    <!-- http://purl.org/dc/elements/1.1/publisher -->
+###  http://www.w3.org/ns/dcat#description
+dcat:description rdf:type owl:AnnotationProperty ;
+                 rdfs:label "description"@en .
 
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/publisher">
-        <owl:equivalentProperty rdf:resource="https://schema.org/publisher"/>
-        <rdfs:label xml:lang="en">dc:publisher</rdfs:label>
-    </owl:ObjectProperty>
-    
 
+###  http://www.w3.org/ns/dcat#license
+dcat:license rdf:type owl:AnnotationProperty ;
+             rdfs:label "license"@en .
 
-    <!-- http://purl.org/dc/elements/1.1/spatial -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/dc/elements/1.1/spatial">
-        <owl:equivalentProperty rdf:resource="https://schema.org/location"/>
-        <rdfs:range rdf:resource="http://purl.org/dc/elements/1.1/Location"/>
-        <rdfs:label xml:lang="en">dc:spatial</rdfs:label>
-    </owl:ObjectProperty>
-    
+###  http://www.w3.org/ns/dcat#title
+dcat:title rdf:type owl:AnnotationProperty ;
+           rdfs:label "title"@en .
 
 
-    <!-- https://schema.org/location -->
+###  https://www.w3.org/2009/08/skos-reference/skos.html#broadMatch
+skos:broadMatch rdf:type owl:AnnotationProperty .
 
-    <owl:ObjectProperty rdf:about="https://schema.org/location">
-        <rdfs:domain rdf:resource="https://schema.org/Thing"/>
-        <rdfs:range rdf:resource="https://schema.org/Place"/>
-        <rdfs:label xml:lang="en">schema:location</rdfs:label>
-    </owl:ObjectProperty>
-    
 
+###  https://www.w3.org/2009/08/skos-reference/skos.html#closeMatch
+skos:closeMatch rdf:type owl:AnnotationProperty .
 
-    <!-- https://schema.org/publisher -->
 
-    <owl:ObjectProperty rdf:about="https://schema.org/publisher">
-        <rdfs:domain rdf:resource="https://schema.org/Thing"/>
-        <rdfs:range rdf:resource="https://schema.org/Organization"/>
-        <rdfs:range rdf:resource="https://schema.org/Person"/>
-        <rdfs:label xml:lang="en">schema:publisher</rdfs:label>
-    </owl:ObjectProperty>
-    
+###  https://www.w3.org/2009/08/skos-reference/skos.html#exactMatch
+skos:exactMatch rdf:type owl:AnnotationProperty .
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
+###  https://www.w3.org/2009/08/skos-reference/skos.html#narrowMatch
+skos:narrowMatch rdf:type owl:AnnotationProperty .
 
-    
 
+###  https://www.w3.org/2009/08/skos-reference/skos.html#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty ;
+               rdfs:label "prefLabel" .
 
-    <!-- http://purl.org/dc/terms/description -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/description">
-        <owl:equivalentProperty rdf:resource="https://schema.org/description"/>
-        <rdfs:label xml:lang="en">dc:description</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  https://www.w3.org/2009/08/skos-reference/skos.html#relatedMatch
+skos:relatedMatch rdf:type owl:AnnotationProperty .
 
 
-    <!-- http://purl.org/dc/terms/title -->
+#################################################################
+#    Object Properties
+#################################################################
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/title">
-        <owl:equivalentProperty rdf:resource="https://schema.org/name"/>
-        <rdfs:label xml:lang="en">dc:title</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  http://purl.org/dc/elements/1.1/publisher
+<http://purl.org/dc/elements/1.1/publisher> rdf:type owl:ObjectProperty ;
+                                            owl:equivalentProperty schema:publisher ;
+                                            rdfs:label "publisher"@en ;
+                                            skos:exactMatch schema:publisher .
 
 
-    <!-- http://www.w3.org/ns/dcat#theme -->
+###  http://purl.org/dc/elements/1.1/spatial
+<http://purl.org/dc/elements/1.1/spatial> rdf:type owl:ObjectProperty ;
+                                          rdfs:range <http://purl.org/dc/elements/1.1/Location> ;
+                                          rdfs:label "spatial"@en ;
+                                          skos:narrowMatch schema:location .
 
-    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/dcat#theme">
-        <owl:equivalentProperty rdf:resource="https://schema.org/about"/>
-        <rdfs:label xml:lang="en">dcat:theme</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  https://schema.org/location
+schema:location rdf:type owl:ObjectProperty ;
+                rdfs:range schema:Place ;
+                rdfs:label "location"@en ;
+                skos:broadMatch <http://purl.org/dc/elements/1.1/spatial> .
 
-    <!-- http://xmlns.com/foaf/0.1/page -->
 
-    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/page">
-        <owl:equivalentProperty rdf:resource="https://schema.org/url"/>
-        <rdfs:label xml:lang="en">foaf:page</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  https://schema.org/publisher
+schema:publisher rdf:type owl:ObjectProperty ;
+                 rdfs:range schema:Organization ,
+                            schema:Person ;
+                 rdfs:label "publisher"@en ;
+                 skos:exactMatch <http://purl.org/dc/elements/1.1/publisher> .
 
 
-    <!-- https://schema.org/about -->
+###  https://www.w3.org/2009/08/skos-reference/skos.html#broadMatch
+skos:broadMatch rdf:type owl:ObjectProperty ;
+                owl:inverseOf skos:narrowMatch .
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/about">
-        <rdfs:domain rdf:resource="https://schema.org/Thing"/>
-        <rdfs:label xml:lang="en">schema:about</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  https://www.w3.org/2009/08/skos-reference/skos.html#closeMatch
+skos:closeMatch rdf:type owl:ObjectProperty ,
+                         owl:SymmetricProperty .
 
-    <!-- https://schema.org/description -->
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/description">
-        <rdfs:domain rdf:resource="https://schema.org/Thing"/>
-        <rdfs:label xml:lang="en">schema:description</rdfs:label>
-    </owl:DatatypeProperty>
-    
+###  https://www.w3.org/2009/08/skos-reference/skos.html#exactMatch
+skos:exactMatch rdf:type owl:ObjectProperty ,
+                         owl:SymmetricProperty .
 
 
-    <!-- https://schema.org/name -->
+###  https://www.w3.org/2009/08/skos-reference/skos.html#narrowMatch
+skos:narrowMatch rdf:type owl:ObjectProperty .
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/name">
-        <rdfs:domain rdf:resource="https://schema.org/Thing"/>
-        <rdfs:label xml:lang="en">schema:name</rdfs:label>
-    </owl:DatatypeProperty>
-    
 
+###  https://www.w3.org/2009/08/skos-reference/skos.html#relatedMatch
+skos:relatedMatch rdf:type owl:ObjectProperty ,
+                           owl:SymmetricProperty .
 
-    <!-- https://schema.org/url -->
 
-    <owl:DatatypeProperty rdf:about="https://schema.org/url">
-        <rdfs:domain rdf:resource="https://schema.org/Thing"/>
-        <rdfs:label xml:lang="en">schema:url</rdfs:label>
-    </owl:DatatypeProperty>
-    
+#################################################################
+#    Data properties
+#################################################################
 
+###  http://purl.org/dc/terms/description
+dct:description rdf:type owl:DatatypeProperty ;
+                owl:equivalentProperty schema:description ;
+                rdfs:label "description"@en ;
+                skos:exactMatch schema:description .
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
 
-    
+###  http://purl.org/dc/terms/title
+dct:title rdf:type owl:DatatypeProperty ;
+          owl:equivalentProperty schema:name ;
+          rdfs:label "title"@en ;
+          skos:closeMatch schema:name .
 
 
-    <!-- http://purl.org/dc/elements/1.1/Location -->
+###  http://www.w3.org/ns/dcat#theme
+dcat:theme rdf:type owl:DatatypeProperty ;
+           owl:equivalentProperty schema:about ;
+           rdfs:label "theme"@en ;
+           skos:closeMatch schema:about .
 
-    <owl:Class rdf:about="http://purl.org/dc/elements/1.1/Location">
-        <owl:equivalentClass rdf:resource="https://schema.org/Place"/>
-        <rdfs:label xml:lang="en">dc:Location</rdfs:label>
-    </owl:Class>
-    
 
+###  http://xmlns.com/foaf/0.1/page
+foaf:page rdf:type owl:DatatypeProperty ;
+          owl:equivalentProperty schema:url ;
+          rdfs:label "page"@en ;
+          skos:exactMatch schema:url .
 
-    <!-- http://purl.org/ejp-rd/vocabulary/Biobank -->
 
-    <owl:Class rdf:about="http://purl.org/ejp-rd/vocabulary/Biobank">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Resource"/>
-        <rdfs:label xml:lang="en">ejprd:Biobank</rdfs:label>
-    </owl:Class>
-    
+###  https://schema.org/about
+schema:about rdf:type owl:DatatypeProperty ;
+             rdfs:label "about"@en ;
+             skos:closeMatch dcat:theme .
 
 
-    <!-- http://purl.org/ejp-rd/vocabulary/Guideline -->
+###  https://schema.org/description
+schema:description rdf:type owl:DatatypeProperty ;
+                   rdfs:label "description"@en ;
+                   skos:exactMatch dct:description .
 
-    <owl:Class rdf:about="http://purl.org/ejp-rd/vocabulary/Guideline">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Resource"/>
-        <rdfs:label xml:lang="en">ejprd:Guideline</rdfs:label>
-    </owl:Class>
-    
 
+###  https://schema.org/name
+schema:name rdf:type owl:DatatypeProperty ;
+            rdfs:label "name"@en ;
+            skos:closeMatch dct:title .
 
-    <!-- http://purl.org/ejp-rd/vocabulary/PatientRegistry -->
 
-    <owl:Class rdf:about="http://purl.org/ejp-rd/vocabulary/PatientRegistry">
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Resource"/>
-        <rdfs:label xml:lang="en">ejprd:PatientRegistry</rdfs:label>
-    </owl:Class>
-    
+###  https://schema.org/url
+schema:url rdf:type owl:DatatypeProperty ;
+           rdfs:label "url"@en ;
+           skos:exactMatch foaf:page .
 
 
-    <!-- http://www.w3.org/ns/dcat#Catalog -->
+#################################################################
+#    Classes
+#################################################################
 
-    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Catalog">
-        <owl:equivalentClass rdf:resource="https://schema.org/DataCatalog"/>
-        <rdfs:label xml:lang="en">dcat:Catalog</rdfs:label>
-    </owl:Class>
-    
+###  http://purl.org/dc/elements/1.1/Location
+<http://purl.org/dc/elements/1.1/Location> rdf:type owl:Class ;
+                                           owl:equivalentClass schema:Place ;
+                                           rdfs:label "Location"@en ;
+                                           skos:closeMatch schema:Place ;
+                                           skos:prefLabel "Location"@en .
 
 
-    <!-- http://www.w3.org/ns/dcat#Dataset -->
+###  http://purl.org/ejp-rd/vocabulary/Biobank
+ejp:Biobank rdf:type owl:Class ;
+            rdfs:subClassOf dcat:Resource ;
+            rdfs:label "Biobank"@en ;
+            skos:prefLabel "Biobank"@en .
 
-    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Dataset">
-        <owl:equivalentClass rdf:resource="https://schema.org/Dataset"/>
-        <rdfs:label xml:lang="en">dcat:Dataset</rdfs:label>
-    </owl:Class>
-    
 
+###  http://purl.org/ejp-rd/vocabulary/Guideline
+ejp:Guideline rdf:type owl:Class ;
+              rdfs:subClassOf dcat:Resource ;
+              rdfs:label "Guideline"@en ;
+              skos:prefLabel "Biobank"@en .
 
-    <!-- http://www.w3.org/ns/dcat#Resource -->
 
-    <owl:Class rdf:about="http://www.w3.org/ns/dcat#Resource">
-        <owl:equivalentClass rdf:resource="https://schema.org/Thing"/>
-        <rdfs:label xml:lang="en">dcat:Resource</rdfs:label>
-    </owl:Class>
-    
+###  http://purl.org/ejp-rd/vocabulary/PatientRegistry
+ejp:PatientRegistry rdf:type owl:Class ;
+                    rdfs:subClassOf dcat:Resource ;
+                    rdfs:label "PatientRegistry"@en ;
+                    skos:prefLabel "PatientRegistry"@en .
 
 
-    <!-- http://xmlns.com/foaf/0.1/Organization -->
+###  http://schema.org/Thing
+<http://schema.org/Thing> rdf:type owl:Class ;
+                          owl:equivalentClass dcat:Resource ;
+                          rdfs:label "Thing" ;
+                          skos:closeMatch owl:Thing ;
+                          skos:prefLabel "Thing"@en .
 
-    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Organization">
-        <owl:equivalentClass rdf:resource="https://schema.org/Organization"/>
-        <rdfs:label xml:lang="en">foaf:Organization</rdfs:label>
-    </owl:Class>
-    
 
+###  http://www.w3.org/ns/dcat#Catalog
+dcat:Catalog rdf:type owl:Class ;
+             owl:equivalentClass schema:DataCatalog ;
+             rdfs:label "Catalog"@en ;
+             skos:narrowMatch schema:DataCatalog ;
+             skos:prefLabel "Catalog"@en .
 
-    <!-- http://xmlns.com/foaf/0.1/Person -->
 
-    <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
-        <owl:equivalentClass rdf:resource="https://schema.org/Person"/>
-        <rdfs:label xml:lang="en">foaf:Person</rdfs:label>
-    </owl:Class>
-    
+###  http://www.w3.org/ns/dcat#Dataset
+dcat:Dataset rdf:type owl:Class ;
+             owl:equivalentClass schema:Dataset ;
+             rdfs:label "Dataset"@en ;
+             skos:exactMatch schema:Dataset ;
+             skos:prefLabel "Dataset"@en .
 
 
-    <!-- https://schema.org/DataCatalog -->
+###  http://www.w3.org/ns/dcat#Resource
+dcat:Resource rdf:type owl:Class ;
+              rdfs:label "Resource"@en ;
+              skos:broadMatch <http://schema.org/Thing> ;
+              skos:prefLabel "Resource"@en .
 
-    <owl:Class rdf:about="https://schema.org/DataCatalog">
-        <rdfs:label xml:lang="en">schema:DataCatalog</rdfs:label>
-    </owl:Class>
-    
 
+###  http://xmlns.com/foaf/0.1/Organization
+foaf:Organization rdf:type owl:Class ;
+                  owl:equivalentClass schema:Organization ;
+                  rdfs:label "Organization"@en ;
+                  skos:exactMatch schema:Organization ;
+                  skos:prefLabel "Organization"@en .
 
-    <!-- https://schema.org/Dataset -->
 
-    <owl:Class rdf:about="https://schema.org/Dataset">
-        <rdfs:label xml:lang="en">schema:Dataset</rdfs:label>
-    </owl:Class>
-    
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class ;
+            owl:equivalentClass schema:Person ;
+            rdfs:label "Person"@en ;
+            skos:exactMatch schema:Person ;
+            skos:prefLabel "Person"@en .
 
 
-    <!-- https://schema.org/Organization -->
+###  https://schema.org/DataCatalog
+schema:DataCatalog rdf:type owl:Class ;
+                   rdfs:label "DataCatalog"@en ;
+                   skos:broadMatch dcat:Catalog ;
+                   skos:prefLabel "DataCatalog"@en .
 
-    <owl:Class rdf:about="https://schema.org/Organization">
-        <rdfs:label xml:lang="en">schema:Organization</rdfs:label>
-    </owl:Class>
-    
 
+###  https://schema.org/Dataset
+schema:Dataset rdf:type owl:Class ;
+               rdfs:label "Dataset"@en ;
+               skos:exactMatch dcat:Dataset ;
+               skos:prefLabel "Dataset"@en .
 
-    <!-- https://schema.org/Person -->
 
-    <owl:Class rdf:about="https://schema.org/Person">
-        <rdfs:label xml:lang="en">schema:Person</rdfs:label>
-    </owl:Class>
-    
+###  https://schema.org/Organization
+schema:Organization rdf:type owl:Class ;
+                    rdfs:label "Organization"@en ;
+                    skos:exactMatch foaf:Organization ;
+                    skos:prefLabel "Organization"@en .
 
 
-    <!-- https://schema.org/Place -->
+###  https://schema.org/Person
+schema:Person rdf:type owl:Class ;
+              rdfs:label "Person"@en ;
+              skos:exactMatch foaf:Person ;
+              skos:prefLabel "Person"@en .
 
-    <owl:Class rdf:about="https://schema.org/Place">
-        <rdfs:label xml:lang="en">schema:Place</rdfs:label>
-    </owl:Class>
-    
 
+###  https://schema.org/Place
+schema:Place rdf:type owl:Class ;
+             rdfs:label "Place"@en ;
+             skos:closeMatch <http://purl.org/dc/elements/1.1/Location> ;
+             skos:prefLabel "Place"@en .
 
-    <!-- https://schema.org/Thing -->
 
-    <owl:Class rdf:about="https://schema.org/Thing">
-        <rdfs:label xml:lang="en">schema:Thing</rdfs:label>
-    </owl:Class>
-</rdf:RDF>
+#################################################################
+#    Annotations
+#################################################################
 
+skos:broadMatch rdfs:label "broadMatch"@en .
 
 
-<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+skos:closeMatch rdfs:label "closeMatch"@en .
 
+
+skos:exactMatch rdfs:label "exactMatch"@en .
+
+
+skos:narrowMatch rdfs:label "narrowMatch"@en .
+
+
+skos:relatedMatch rdfs:label "relatedMatch"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
