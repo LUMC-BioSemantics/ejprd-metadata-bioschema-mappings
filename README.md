@@ -1,5 +1,4 @@
 ![GitHub](https://img.shields.io/github/license/ejp-rd-vp/resource-metadata-schema)
-![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/ejp-rd-vp/resource-metadata-schema)
 ![GitHub tag (funder)](https://img.shields.io/badge/funder-EJP%20RD-brightgreen)
 
 # ejprd-metadata-bioschema-mappings
